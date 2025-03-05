@@ -22,6 +22,16 @@ public class BlockRegistry {
             .isValidSpawn(Blocks::never)
     );
 
+    public static final DeferredBlock<Block> NEON_BLOCK = BLOCKS.registerSimpleBlock("neon_block", BlockBehaviour.Properties.of()
+            .mapColor(MapColor.SAND)
+            .instrument(NoteBlockInstrument.PLING)
+            .sound(SoundType.GLASS)
+            .lightLevel(state -> 15)
+            .strength(-1.0F, 3600000.0F)
+            .noLootTable()
+            .isValidSpawn(Blocks::never)
+    );
+
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);
     }
