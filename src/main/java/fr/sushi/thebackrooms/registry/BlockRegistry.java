@@ -32,6 +32,8 @@ public class BlockRegistry {
             .isValidSpawn(Blocks::never)
     );
 
+    public static final DeferredRegister<ClipthroughBlock> CLIPTHROUGH_BLOCK = BLOCKS.registerBlock("clipthrough_block", () -> new ClipThroughBlock());
+
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);
     }
