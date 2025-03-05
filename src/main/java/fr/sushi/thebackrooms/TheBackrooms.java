@@ -13,8 +13,8 @@ public class TheBackrooms {
     public static final String MODID = "thebackrooms";
 
     public TheBackrooms(IEventBus modEventBus, ModContainer modContainer) {
-        ItemRegistry.register(modEventBus);
         BlockRegistry.register(modEventBus);
+        ItemRegistry.register(modEventBus);
         CreativeTabRegistry.register(modEventBus);
 
         modEventBus.register(ModEvents.class);
