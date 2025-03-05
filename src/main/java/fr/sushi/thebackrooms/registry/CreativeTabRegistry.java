@@ -1,6 +1,7 @@
 package fr.sushi.thebackrooms.registry;
 
 import fr.sushi.thebackrooms.TheBackrooms;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -9,6 +10,9 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.Comparator;
+
+import static fr.sushi.thebackrooms.registry.ItemRegistry.ITEMS;
 import static fr.sushi.thebackrooms.registry.ItemRegistry.WALLPAPER_BLOCK_ITEM;
 
 public class CreativeTabRegistry {
@@ -19,7 +23,9 @@ public class CreativeTabRegistry {
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> WALLPAPER_BLOCK_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(WALLPAPER_BLOCK_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                ITEMS.getEntries().stream()
+                        .sorted(Comparator.comparing(Holder::getRegisteredName))
+                        .forEach(item -> output.accept(item.get()));
             }).build());
 
     public static void register(IEventBus bus) {
