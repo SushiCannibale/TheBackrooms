@@ -1,8 +1,6 @@
 package fr.sushi.thebackrooms.event;
 
 import fr.sushi.thebackrooms.TheBackrooms;
-import fr.sushi.thebackrooms.registry.ItemRegistry;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -11,8 +9,8 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 public class ModEvents {
     @SubscribeEvent
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ItemRegistry.WALLPAPER_BLOCK_ITEM);
-        }
+//        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+//            event.accept(ItemRegistry.WALLPAPER_BLOCK_ITEM);
+//        }
     }
 }

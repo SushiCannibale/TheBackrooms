@@ -14,8 +14,8 @@ import static fr.sushi.thebackrooms.registry.ItemRegistry.WALLPAPER_BLOCK_ITEM;
 public class CreativeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TheBackrooms.MODID);
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.thebackrooms"))
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> THE_BACKROOMS_TAB = CREATIVE_MODE_TABS.register("the_backrooms", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.the_backrooms"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> WALLPAPER_BLOCK_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {

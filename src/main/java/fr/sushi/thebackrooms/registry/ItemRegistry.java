@@ -9,7 +9,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ItemRegistry {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TheBackrooms.MODID);
 
-    public static final DeferredItem<BlockItem> WALLPAPER_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", BlockRegistry.WALLPAPER_BLOCK);
+    public static final DeferredItem<BlockItem> WALLPAPER_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("wallpaper_block", BlockRegistry.WALLPAPER_BLOCK);
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
