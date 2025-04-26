@@ -1,0 +1,15 @@
+{
+  "type": "thebackrooms:passthrough_patch",
+  "config": {
+    "max_half_height": 5,
+    "radius": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 5,
+      "min_inclusive": 3
+    },
+    "target": {
+      "predicate_type": "minecraft:tag_match",
+      "tag": "minecraft:dirt"
+    }
+  }
+}
