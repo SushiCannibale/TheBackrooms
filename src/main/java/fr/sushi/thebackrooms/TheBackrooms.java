@@ -16,6 +16,6 @@ public class TheBackrooms {
         BlockRegistry.register(modEventBus);
         ItemRegistry.register(modEventBus);
         CreativeTabRegistry.register(modEventBus);
-//        FeatureRegistry.register(modEventBus);
+        FeatureRegistry.register(modEventBus);
     }
 }
