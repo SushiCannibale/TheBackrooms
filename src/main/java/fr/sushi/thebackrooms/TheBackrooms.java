@@ -1,9 +1,12 @@
 package fr.sushi.thebackrooms;
 
+import fr.sushi.thebackrooms.datagen.ModDataGenerators;
 import fr.sushi.thebackrooms.registry.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(TheBackrooms.MODID)
 public class TheBackrooms {
@@ -14,6 +17,7 @@ public class TheBackrooms {
         ItemRegistry.register(modEventBus);
         CreativeTabRegistry.register(modEventBus);
         BiomeFeatureRegistry.register(modEventBus);
-        FeatureRegistry.loadClass();
+
+        modEventBus.register(ModDataGenerators.class);
     }
 }

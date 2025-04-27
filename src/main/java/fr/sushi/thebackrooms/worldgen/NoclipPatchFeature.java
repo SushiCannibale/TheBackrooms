@@ -19,6 +19,7 @@ public class NoclipPatchFeature extends Feature<NoclipPatchConfiguration>
 	@Override
 	public boolean place(FeaturePlaceContext<NoclipPatchConfiguration> ctx)
 	{
+		System.out.println("Placed Patch OwO");
 		NoclipPatchConfiguration config = ctx.config();
 		BlockPos blockpos = ctx.origin();
 		WorldGenLevel worldgenlevel = ctx.level();
