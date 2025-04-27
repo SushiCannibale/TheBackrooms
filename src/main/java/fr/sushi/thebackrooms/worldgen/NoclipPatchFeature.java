@@ -1,29 +1,25 @@
-package fr.sushi.thebackrooms.worldgen.placed_feature;
+package fr.sushi.thebackrooms.worldgen;
 
 import com.mojang.serialization.Codec;
 import fr.sushi.thebackrooms.registry.BlockRegistry;
-import fr.sushi.thebackrooms.worldgen.configured_feature.PassthroughPatchConfiguration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.DiskConfiguration;
 
-public class PassthroughPatchFeature extends Feature<PassthroughPatchConfiguration>
+public class NoclipPatchFeature extends Feature<NoclipPatchConfiguration>
 {
-	public PassthroughPatchFeature(Codec<PassthroughPatchConfiguration> codec)
+	public NoclipPatchFeature(Codec<NoclipPatchConfiguration> codec)
 	{
 		super(codec);
 	}
 
-	// We're placing noclip blocks in a disk-like shape at ground level, extending up to `halfHeight` blocks
 	@Override
-	public boolean place(FeaturePlaceContext<PassthroughPatchConfiguration> ctx)
+	public boolean place(FeaturePlaceContext<NoclipPatchConfiguration> ctx)
 	{
-		PassthroughPatchConfiguration config = ctx.config();
+		NoclipPatchConfiguration config = ctx.config();
 		BlockPos blockpos = ctx.origin();
 		WorldGenLevel worldgenlevel = ctx.level();
 		RandomSource randomsource = ctx.random();
@@ -68,23 +64,29 @@ public class PassthroughPatchFeature extends Feature<PassthroughPatchConfigurati
 //		return false;
 	}
 
-	protected boolean placeColumn(PassthroughPatchConfiguration config, WorldGenLevel level, RandomSource random, int maxY, int minY, BlockPos.MutableBlockPos pos) {
+	protected boolean placeColumn(NoclipPatchConfiguration config, WorldGenLevel level, RandomSource random, int maxY, int minY, BlockPos.MutableBlockPos pos)
+	{
 		boolean flag = false;
 		boolean flag1 = false;
 
-		for(int i = maxY; i > minY; --i) {
+		for (int i = maxY; i > minY; --i)
+		{
 			pos.setY(i);
-			if (config.target().test(level, pos)) {
+			if (config.target().test(level, pos))
+			{
 				// TODO: copy current blockstate into ClipthroughBlock's default state
-				BlockState blockstate = BlockRegistry.CLIPTHROUGH_BLOCK.get().defaultBlockState();
+				BlockState blockstate = BlockRegistry.WALLPAPER_BLOCK.get().defaultBlockState();
 				level.setBlock(pos, blockstate, 2);
-				if (!flag1) {
+				if (!flag1)
+				{
 					this.markAboveForPostProcessing(level, pos);
 				}
 
 				flag = true;
 				flag1 = true;
-			} else {
+			}
+			else
+			{
 				flag1 = false;
 			}
 		}

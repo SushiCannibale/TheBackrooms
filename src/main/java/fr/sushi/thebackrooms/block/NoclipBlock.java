@@ -9,9 +9,9 @@ import org.jetbrains.annotations.Nullable;
  * This block mimics the one that should've been placed by the natural generation. Like powder snow, players will start
  * sinking in this block when walked on.
  */
-public class ClipthroughBlock extends Block
+public class NoclipBlock extends Block
 {
-	public ClipthroughBlock(Properties properties)
+	public NoclipBlock(Properties properties)
 	{
 		super(properties);
 	}

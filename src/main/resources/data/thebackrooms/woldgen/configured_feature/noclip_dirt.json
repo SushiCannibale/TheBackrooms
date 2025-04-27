@@ -1,5 +1,5 @@
 {
-  "type": "thebackrooms:passthrough_patch",
+  "type": "thebackrooms:noclip_patch",
   "config": {
     "max_half_height": 5,
     "radius": {

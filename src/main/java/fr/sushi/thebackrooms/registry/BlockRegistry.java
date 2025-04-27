@@ -1,7 +1,7 @@
 package fr.sushi.thebackrooms.registry;
 
 import fr.sushi.thebackrooms.TheBackrooms;
-import fr.sushi.thebackrooms.block.ClipthroughBlock;
+import fr.sushi.thebackrooms.block.NoclipBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -36,8 +36,8 @@ public class BlockRegistry
 												   .isValidSpawn(Blocks::never)
 																					);
 
-	public static final DeferredBlock<ClipthroughBlock> CLIPTHROUGH_BLOCK = BLOCKS.registerBlock(
-			"clipthrough_block", ClipthroughBlock::new);
+	public static final DeferredBlock<NoclipBlock> NOCLIP_BLOCK = BLOCKS.registerBlock(
+			"noclip_block", NoclipBlock::new);
 
 	public static void register(IEventBus bus)
 	{
