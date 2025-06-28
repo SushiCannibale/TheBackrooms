@@ -1,14 +1,14 @@
 package fr.sushi.thebackrooms.block;
 
-import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.phys.Vec3;
 
-/**
- * This block mimics the one that should've been placed by the natural generation. Like powder snow, players will start
- * sinking in this block when walked on.
- */
+///  TODO: DelegateBlockstateModel & ModifyBakingResult event
 public class NoclipBlock extends Block
 {
 	public NoclipBlock(Properties properties)
@@ -17,9 +17,11 @@ public class NoclipBlock extends Block
 	}
 
 	@Override
-	public @Nullable BlockState getStateForPlacement(BlockPlaceContext ctx)
+	protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity)
 	{
-		// TODO: pick state of a neighbour
-		return this.defaultBlockState();
+		entity.resetFallDistance();
+		Vec3 delta = entity.getDeltaMovement();
+		entity.setDeltaMovement(delta.multiply(1.0D, 0.05D, 1.0D));
 	}
+
 }
