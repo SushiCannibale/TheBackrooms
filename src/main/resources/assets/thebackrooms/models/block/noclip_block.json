@@ -1,4 +1,5 @@
 {
+  "loader": "thebackrooms:cube_clone_loader",
   "parent": "minecraft:block/cube_all",
   "textures": {
     "all": "thebackrooms:block/noclip_block"

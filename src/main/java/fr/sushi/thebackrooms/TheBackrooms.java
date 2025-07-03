@@ -1,6 +1,6 @@
 package fr.sushi.thebackrooms;
 
-import fr.sushi.thebackrooms.client.ModClientEventHandler;
+import fr.sushi.thebackrooms.client.ClientEventHandler;
 import fr.sushi.thebackrooms.common.registry.BlockRegistry;
 import fr.sushi.thebackrooms.common.registry.CreativeTabRegistry;
 import fr.sushi.thebackrooms.common.registry.ItemRegistry;
@@ -17,6 +17,6 @@ public class TheBackrooms {
         ItemRegistry.register(modEventBus);
         CreativeTabRegistry.register(modEventBus);
 
-        modEventBus.register(ModClientEventHandler.class);
+        modEventBus.register(ClientEventHandler.class);
     }
 }
