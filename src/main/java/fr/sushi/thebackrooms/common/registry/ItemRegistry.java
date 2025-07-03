@@ -1,4 +1,4 @@
-package fr.sushi.thebackrooms.registry;
+package fr.sushi.thebackrooms.common.registry;
 
 import fr.sushi.thebackrooms.TheBackrooms;
 import net.minecraft.world.item.BlockItem;

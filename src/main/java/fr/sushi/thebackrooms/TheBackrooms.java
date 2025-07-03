@@ -1,8 +1,9 @@
 package fr.sushi.thebackrooms;
 
-import fr.sushi.thebackrooms.registry.BlockRegistry;
-import fr.sushi.thebackrooms.registry.CreativeTabRegistry;
-import fr.sushi.thebackrooms.registry.ItemRegistry;
+import fr.sushi.thebackrooms.client.ModClientEventHandler;
+import fr.sushi.thebackrooms.common.registry.BlockRegistry;
+import fr.sushi.thebackrooms.common.registry.CreativeTabRegistry;
+import fr.sushi.thebackrooms.common.registry.ItemRegistry;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -15,5 +16,7 @@ public class TheBackrooms {
         BlockRegistry.register(modEventBus);
         ItemRegistry.register(modEventBus);
         CreativeTabRegistry.register(modEventBus);
+
+        modEventBus.register(ModClientEventHandler.class);
     }
 }

@@ -1,11 +1,13 @@
-package fr.sushi.thebackrooms.block;
+package fr.sushi.thebackrooms.common.block;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
 ///  TODO: DelegateBlockstateModel & ModifyBakingResult event
@@ -24,4 +26,15 @@ public class NoclipBlock extends Block
 		entity.setDeltaMovement(delta.multiply(1.0D, 0.05D, 1.0D));
 	}
 
+	@Override
+	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult)
+	{
+		if (!level.isClientSide())
+		{
+			return InteractionResult.SUCCESS;
+		}
+		return InteractionResult.SUCCESS;
+	}
 }
+
+

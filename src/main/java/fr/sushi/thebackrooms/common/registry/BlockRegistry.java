@@ -1,7 +1,7 @@
-package fr.sushi.thebackrooms.registry;
+package fr.sushi.thebackrooms.common.registry;
 
 import fr.sushi.thebackrooms.TheBackrooms;
-import fr.sushi.thebackrooms.block.NoclipBlock;
+import fr.sushi.thebackrooms.common.block.NoclipBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;

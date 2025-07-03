@@ -1,4 +1,4 @@
-package fr.sushi.thebackrooms.registry;
+package fr.sushi.thebackrooms.common.registry;
 
 import fr.sushi.thebackrooms.TheBackrooms;
 import net.minecraft.core.Holder;
@@ -12,8 +12,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.Comparator;
 
-import static fr.sushi.thebackrooms.registry.ItemRegistry.ITEMS;
-import static fr.sushi.thebackrooms.registry.ItemRegistry.WALLPAPER_BLOCK_ITEM;
+import static fr.sushi.thebackrooms.common.registry.ItemRegistry.ITEMS;
+import static fr.sushi.thebackrooms.common.registry.ItemRegistry.WALLPAPER_BLOCK_ITEM;
 
 public class CreativeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TheBackrooms.MODID);
